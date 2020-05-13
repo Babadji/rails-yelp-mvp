@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <br>
+      <h1>All your favorites restaurants</h1>
+      <table>
+        <tbody>
+          <% @restaurants.each do |restaurant| %>
+          <tr>
+            <td><%= restaurant.name %></td>
+            <td><%= restaurant.address %></td>
+            <td><%= restaurant.rating %></td>
+            <td><%= link_to 'Show', restaurant %></td>
+            <td><%= link_to 'Edit', edit_restaurant %></td>
+            <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: "Are you sure?" } %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= link_to "Top Restaurants", top_restaurants_path %>
+      <%= link_to "New Restaurant", new_restaurants_path %>
+    </div>
+  </div>
+</div>
